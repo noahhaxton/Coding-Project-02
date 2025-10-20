@@ -1,0 +1,84 @@
+/* Base layout */
+* { box-sizing: border-box; }
+:root { --maxw: 1100px; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #0f1115;
+  color: #e8eaed;
+  line-height: 1.5;
+}
+
+.site-header {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+.site-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  letter-spacing: 0.5px;
+}
+
+main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 8px 16px 48px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+/* Product card */
+.product-card {
+  background: #161a22;
+  border: 1px solid #222737;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  will-change: transform;
+}
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  background: #0d1016;
+}
+.product-card .content {
+  padding: 12px 14px 14px;
+  display: grid;
+  gap: 6px;
+}
+.product-card .name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.product-card .price {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Hover highlight (Step 8 requirement) */
+.product-card:hover {
+  transform: scale(1.03);
+  border-color: #2b63ff;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+}
+
+/* Simple error styling */
+.error {
+  padding: 16px;
+  border-radius: 12px;
+  background: #2a1420;
+  border: 1px solid #6b1231;
+  color: #ffd7e0;
+}
